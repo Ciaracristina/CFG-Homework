@@ -1,0 +1,3 @@
+Pip is a package manager for Python packages or modules which can be installed. A
+package will contain all the files you will need for a module. Once you have
+downloaded a package using pip you can then import it to use in your project.
