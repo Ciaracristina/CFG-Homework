@@ -1,0 +1,70 @@
+  TASK 1 (Agile Techniques)
+HOMEWORK WEEK 5-6
+(handout for students)
+Question 1
+Complete definitions for Scrum related key terminology provided below. SCRUM CEREMONIES
+• · Product backlog refinement
+• · Sprint planning.
+• · Daily scrum.
+  Product backlog is an ordered list of what needs done to improve a product. It is the source of work for the scrum team and where the development team take their from.
+  Sprint planning is a ceremony that everyone in the scrum teams attends to make sure everyone knows what to do in order to get things done in the sprint.
+  Daily scrum is where the team gets together to outline the plan for the day and identify and any blockers.
+Three questions are asked:
+What did you do yesterday?
+What will you do today?
+Are there any impediments in your way?
+ • · Sprint review.
+• · Sprint retrospective
+• · ScrumMaster
+ Sprint review is where it is outlined what has been accomplished during the sprint and everyone in the team showcases completed work to stakeholders.
+  Sprint retrospective is the final part in the scrum where the team look back over all the completed work and see where improvements could have been made or what worked well or what didn’t work well.
+SCRUM ROLES
+
+ A scrum master plans all the tasks and checks on everyone during a sprint. They also set a time frame for which the sprint should be completed – usually 2-4 weeks.
+ • · Product Owner
+• · Development Team.
+ A product owner decides what kind of software or product is to be built and clarifies the details of the product throughout the scrum. They are also the person who liaises with the customer and collects feedback from the customer and stake holders.
+  The development team are the core of the scrum team. They are the ones who are responsible for building the actual product and meeting the sprint goal. They pull their tasks from the product backlog.
+Question 2
+You are leading a development team that was given a task to create a new yoga booking system.
+ High level description of the system is as follows:
+· It has a very simple interface to accept user input (bookings) and display classes information
+· All bookings, appointments, schedules etc should be stored in a SQL database.
+· There is a ‘backend’ system that should be written in Python to handle the logic and manage the data flow.
+Your team has two weeks to build a simple prototype that will be shown to the client to seek their feedback and discuss further enhancements.
+TASK
+ • · Break this task into smaller stories (chunks of work) for the team to work on.
+• · Assume that one person works on one task.
+• · Mark tasks that can be worked on in parallel and perhaps those that
+need to be worked on in particular order.
+
+    TASK 2 (SQL)
+Question 1
+Design a cinema booking system.
+• · Draw a list of key requirements
+Create a database with several tables including:
+ Think how you would approach the problem and what are potential ways of solving it?
+You do not need to write actual code, but describe the high-level approach:
+  • Users – user id, first name, surname, email, mobile number, age
+• Cinemas – cinema id, location, name
+• Movies - movie id, name, length, genre, target audience, age restriction
+
+• Shows – show id, date, time, seats available(standard, premium), seat cost, screen id, movie id
+• Screens – screen id, movie id, seat id, ticket id
+• Seats – seat id, seat number, seat class, show id, booking id
+• Bookings – booking id, number of tickets, total cost, user id(FK), show
+id(FK), seat id(FK), payment, name on card, card number
+• Tickets – ticket id, seat number, screen id
+  Functions in order to complete booking and reserve seats
+Users being able to select seats and make payments for their selection. A log in and password function in python.
+ • · What are your main considerations?
+• · What would be your common or biggest problems?
+• · What components or tools would you potentially use?
+ Main considerations would be that users were able to select the desired movie and seats and that they get conformation of this is terms of a ticket.
+  Once seats have been selected and booked by someone that these are no longer showing available to other users.
+  My SQL to create the databases which hold all the information on movies, locations, times etc.
+Functions in SQL to perform the booking, reserve the date, time and seat.
+Python in order to perform the logging in functions, payment functions and to produce the ticket.
+You would need to connect python to SQL through an API and the connector() function in order for the two programs to talk to one another. They would be connected via a local host, username and password.
+ • · You are welcome to draw a diagram (a very simple one) for the process flow to explain how it is going to work.
+
