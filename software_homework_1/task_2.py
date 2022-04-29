@@ -19,6 +19,7 @@ class Student:
         self.age = age
         self.id = id
         self.subjects = dict()
+        self.avg_mark = None
 
     def add_subject_and_mark(self, subject, mark):
         self.subjects[subject] = mark
@@ -26,10 +27,20 @@ class Student:
     def remove_subject_and_mark(self, subject):
         del self.subjects[subject]
 
-    def all_subjects_taken(self, name, subjects):
-        self.name()
-        self.subjects[subjects]
+    # returns a list of all subjects for student
+    def all_subjects_taken(self, subject):
+        return self.subjects.keys()
 
+    # returns students average mark. aka sum all marks and divide by number of marks
+    def average_mark(self):
+        all_marks = self.subjects.values()
+        running_total = 0
+
+        for mark in all_marks:
+            running_total += mark
+
+        self.avg_mark = running_total
+        return self.avg_mark
 
 
 class CFGStudent(Student):
@@ -43,13 +54,14 @@ ciara = CFGStudent('Ciara', 30, 1, 'software')
 benji = CFGStudent('Benji', 31, 2, 'history')
 
 
-ciara.add_subject_and_mark('art', 80)
+ciara.add_subject_and_mark('art', 70)
 ciara.add_subject_and_mark('fullstack', 80)
-ciara.add_subject_and_mark('fullstack', 80)
+ciara.add_subject_and_mark('music', 55)
+ciara.add_subject_and_mark('maths', 73)
 print(ciara.subjects)
 ciara.remove_subject_and_mark('fullstack')
 print(ciara.subjects)
-print(ciara.all_subjects_taken())
+
 
 
 
@@ -57,29 +69,3 @@ print(ciara.all_subjects_taken())
 #     create a method to view all subjects taken by a student
 #     create a method  (and a new variable) to get student's overall mark (use average)
 
-class Vehicle:
-
-    def __init__(self, number_of_wheels, engine_size):
-        self.number_of_wheels = number_of_wheels
-        self.engine_size = engine_size
-
-
-class Car(Vehicle):
-
-    def __init__(self, make, model, year, engine_size):
-        super().__init__(4, engine_size)
-        self.make = make
-        self.model = model
-        self.year = year
-
-mini = Car('mini', 'cooper', 2000, 2)
-
-
-class Bike(Vehicle):
-
-    def __init__(self, colour, style):
-        super().__init__(2, None)
-        self.colour = colour
-        self.style = style
-
-racing = Bike('black', 'racing')
