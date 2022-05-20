@@ -54,7 +54,7 @@ def add_or_increment(character_count, character):
     else:
         character_count[character] = character_count[character] + 1
 
-def test_phrase(characters, phrase):
+def t_phrase(characters, phrase):
     character_count = transform_to_dict(characters)
     for letter in phrase:
         if letter in character_count:
@@ -67,7 +67,9 @@ def test_phrase(characters, phrase):
             return False
     return True
 
-test_phrase('abc', 'cbad')
+print(t_phrase('abc', 'cbad'))
+print(t_phrase('trc', 'cbad'))
+print(t_phrase('scaredycat', 'cat'))
 
 
 
