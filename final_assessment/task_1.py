@@ -16,52 +16,49 @@
 # You can use  it as a skeleton code for your classes OR adjust it and create your own.
 #
 # SEE NOTES BELOW
-
+import random
+import uuid
 
 class CFGStudent:
 
-    def __init__(self, name, surname, age, email, student_id):
+    def __init__(self, name, surname, age, email, student_id=None):
         self.name = name
         self.surname = surname
         self.age = age
         self.email = email
-        self.student_id = dict()
-        
-    @staticmethod
-    def generate_id(student_id):
-        if id not in student_id:
-            student_id[id] = 1
+        self.student_id = self.generate_id(student_id)
+
+    def generate_id(self, student_id):
+        if student_id is None:
+            return str(uuid.uuid1())
         else:
-            student_id[id] = student_id[id] + 1
+            return student_id
+
 
     def get_id(self):
-        print('Student_id: ', self.student_id)
+        return self.student_id
 
     def get_fullname(self):
-        print('Name: ', self.name, 'Surname: ', self.surname)
+        return '{first_name} {surname}'.format(first_name=self.name, surname=self.surname)
+
 
 class NanoStudent(CFGStudent):
 
-    def __init__(self, name, surname, age, email, student_id, specialization, course_grades):
+    def __init__(self, name, surname, age, email, specialization, course_grades, student_id=None):
         super().__init__(name, surname, age, email, student_id)
         self.specialization = specialization
-        self.course_grades = course_grades
+        self.course_grades = dict()
 
-    @staticmethod
-    def generate_id():
-            def generate_id(student_id):
-        if id not in student_id:
-            student_id[id] = 1
-        else:
-            student_id[id] = student_id[id] + 1
+    def generate_id(self):
+        return 'NANO-{id}'.format(id=super().get_id())
 
-    def add_new_grade(self, 'your code goes here'):
-        'your code goes here'
+    def add_new_grade(self, course, grade):
+        self.course_grades[course] = grade
         'update course_grades container'
         "Example: pass in a task name and its grade, so that both are added to course_grades"
 
     def get_course_grades(self):
-        'your code goes here'
+        return self.course_grades
         'fetch course grades container and its values'
 
 ############################################
